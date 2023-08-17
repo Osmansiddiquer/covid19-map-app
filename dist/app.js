@@ -44,6 +44,7 @@ app.get("/covid-statistics", (req, res) => {
     res.status(200).sendFile(path.join(__dirname, "/resources/Covid-Data.json"));
 });
 app.use((req, res, next) => {
+    console.log(req.url);
     res.status(404);
     if (req.accepts('html')) {
         res.sendFile(path.join(__dirname, "/public/404.html"));
