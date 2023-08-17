@@ -25,6 +25,10 @@ app.use((req, res, next)=>{
     next(); // tells to proceed on the route
 })
 
+app.get("/", (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, "/public/index.html"));
+})
+
 app.get("/coordinates", (req, res) => {
     res.status(200).sendFile(path.join(__dirname, "/resources/Place-coordinates list.json"));
 })
